@@ -1,0 +1,80 @@
+// C module [library system management]
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+struct book
+{
+	char name[100],issuer[100];
+	int number,status;
+}a[50];
+int main()
+{
+	int x,n=1,c=1,y=1,i;
+	char name[100];
+	do
+	{
+		printf("Library Management\n");
+		printf("1,Add book\n");
+		printf("2,view add book\n");
+		printf("3,Issue book\n");
+		printf("4,View issue book\n");
+		printf("5,Return book\n");
+		printf("6,exit\n");
+		printf("Enter one of the above :");
+		scanf("%d",&x);
+		switch(x)
+		{
+			case 1:
+			printf("Enter the name :");
+			scanf("%s",a[n].name);
+			a[n].number=n;
+			strcpy(a[n].issuer," ");
+			a[n].status=1;
+			n++;
+			printf("Book added sucessfully !\n");
+			break;
+			case 2:
+			printf("Number\t Name\t Issuer\t status\n");
+			for(i=1;i<n;i++)
+			printf("%d\t %s\t %s\t %s\n",a[i].number,a[i].name,a[i].issuer,a[i].status?"avaliable":"not avaliable");
+			break;
+			case 3:
+			printf("Enter the book name :");
+			scanf("%s",a[i].name);
+			if(a[i].status==0)
+			{
+				printf("Enter the name :");
+				scanf("%s",name);
+				strcpy(a[y].issuer,name);
+				a[y].status=0;
+			}
+			else
+			printf("Book not avaliable\n");
+			break;
+			case 4:
+			printf("Number\t Name\t Issuer\n");
+			for(i=1;i<n;i++)
+			if(a[i].status==0)
+			printf("%d       %s       %s\n",a[i].number,a[i].name,a[i].issuer);
+			break;
+			case 5:
+			printf("Enter book no :");
+			scanf("%d",&y);
+			strcpy(a[y].issuer," ");
+			a[y].status=1;
+			break;
+			case 6:
+			exit(0);
+			break;
+		}
+		printf("Do you want continue 1/0 :");
+		scanf("%d",&c);
+	}while(c>=1);
+	return 0;
+	
+}
+
+
+
+
